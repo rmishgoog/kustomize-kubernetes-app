@@ -24,6 +24,7 @@ var cars = []car{
 	{ID: "5", Name: "Ford Edge LX Luxury", Stock: 10, Price: 38000.89, Origin: "Germany", Engine: "v6"},
 	{ID: "6", Name: "Ford Edge LX Base", Stock: 10, Price: 36000.89, Origin: "Germany", Engine: "v6"},
 	{ID: "7", Name: "Ford Edge LX Base 2022", Stock: 10, Price: 36000.89, Origin: "Germany", Engine: "v6"},
+	{ID: "8", Name: "Ford Edge LX Eco 2022", Stock: 10, Price: 39000.89, Origin: "Germany", Engine: "v6"},
 }
 
 func getCars(c *gin.Context) {
