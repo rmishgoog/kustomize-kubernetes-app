@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type car struct {
+type Car struct {
 	ID     string  `json:"id"`
 	Name   string  `json:"name"`
 	Stock  int     `json:"stock"`
@@ -17,7 +17,7 @@ type car struct {
 	Engine string  `json:"engine"`
 }
 
-var cars = []car{
+var Cars = []Car{
 	{ID: "1", Name: "Ford Mustang GT 5.0", Stock: 100, Price: 55000.99, Origin: "USA", Engine: "v8"},
 	{ID: "2", Name: "Ford Explorer ST", Stock: 55, Price: 60000.99, Origin: "USA", Engine: "v6"},
 	{ID: "4", Name: "Ford Escape Compact", Stock: 10, Price: 32000.89, Origin: "USA", Engine: "v4"},
@@ -27,24 +27,24 @@ var cars = []car{
 	{ID: "8", Name: "Ford Edge LX Eco 2022", Stock: 10, Price: 39000.89, Origin: "Germany", Engine: "v6"},
 }
 
-func getCars(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, cars)
+func GetCarsHandler(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, Cars)
 }
 
-func addCars(c *gin.Context) {
-	var newCar car
+func AddCarsHandler(c *gin.Context) {
+	var newCar Car
 	if err := c.BindJSON(&newCar); err != nil {
 		return
 	}
-	cars = append(cars, newCar)
+	Cars = append(Cars, newCar)
 	c.IndentedJSON(http.StatusCreated, newCar)
 }
 
 func main() {
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
-	router.GET("/cars", getCars)
-	router.POST("/cars", addCars)
+	router.GET("/cars", GetCarsHandler)
+	router.POST("/cars", AddCarsHandler)
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "80"
