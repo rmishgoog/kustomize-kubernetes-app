@@ -20,7 +20,7 @@ type Car struct {
 var Cars = []Car{
 	{ID: "1", Name: "Ford Mustang GT 5.0", Stock: 100, Price: 55000.99, Origin: "USA", Engine: "v8"},
 	{ID: "2", Name: "Ford Explorer ST", Stock: 55, Price: 60000.99, Origin: "USA", Engine: "v6"},
-	{ID: "4", Name: "Ford Escape Compact", Stock: 10, Price: 32000.89, Origin: "USA", Engine: "v4"},
+	{ID: "4", Name: "Ford Escape Compact", Stock: 10, Price: 35000.89, Origin: "USA", Engine: "v4"},
 	{ID: "5", Name: "Ford Edge LX Luxury", Stock: 1000, Price: 38000.89, Origin: "Germany", Engine: "v6"},
 	{ID: "6", Name: "Ford Edge LX Base", Stock: 10, Price: 36000.89, Origin: "Germany", Engine: "v6"},
 	{ID: "7", Name: "Ford Edge LX Base 2022", Stock: 10, Price: 36000.89, Origin: "Germany", Engine: "v6"},
